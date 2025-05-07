@@ -1,0 +1,52 @@
+<div class="flex flex-wrap gap-4">
+  @for (item of cards; track $index) {
+  <div class="card border border-base-300 bg-white w-full flex-1 min-w-xs">
+    <div class="card-body">
+      <p class="card-title">{{ item.title }}</p>
+      <p class="text-2xl font-bold">{{ item.content }}</p>
+      <span>{{ item.subtitle }}</span>
+    </div>
+  </div>
+  }
+</div>
+
+<div class="my-4 w-full flex justify-between">
+  <div class="tabs tabs-box">
+    @for (item of tabs; track $index) {
+    <a
+      (click)="selectTab($index)"
+      role="tab"
+      class="tab"
+      [class.tab-active]="selectedTab === $index"
+      >{{ item }}</a
+    >
+    }
+  </div>
+  <div
+    class="space-x-4 flex [&_button]:flex [&_button]:items-center [&_button]:gap-2"
+  >
+    <button class="btn btn-outline btn-info hover:text-white">
+      <ng-icon name="lucideCirclePlus" /> Novo paciente
+    </button>
+    <button class="btn btn-info text-white">
+      <ng-icon name="lucideCirclePlus" /> Nova consulta
+    </button>
+  </div>
+</div>
+
+<div class="w-full border border-base-300 rounded-lg px-8 pt-0 pb-4">
+  <div class="py-8">
+    <h2 class="font-bold text-2xl">
+      {{ tabContent[selectedTab].title }}
+    </h2>
+    <span class="text-base-content text-sm">
+      {{ tabContent[selectedTab].subtitle }}</span
+    >
+  </div>
+  <app-table [rows]="meusDados" [head]="head" />
+  <div class="w-full flex justify-end mt-4">
+    <button class="btn btn-outline btn-info hover:text-white">
+      {{ tabContent[selectedTab].buttonTitle }}
+    </button>
+  </div>
+</div>
