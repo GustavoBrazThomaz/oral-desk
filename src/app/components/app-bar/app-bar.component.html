@@ -1,11 +1,11 @@
 <div
   class="px-16 py-4 flex justify-between items-center border-b border-base-300 bg-info text-white"
 >
-  <p class="text-lg font-bold">OralDesk</p>
+  <a href="/" class="text-lg font-bold">OralDesk</a>
   <div
-    class="[&_span]:hover:underline [&_span]:font-bold [&_span]:text-sm [&_span]:cursor-pointer flex gap-4"
+    class="[&_a]:hover:underline [&_a]:font-bold [&_a]:text-sm [&_a]:cursor-pointer flex gap-4"
   >
-    <span>Pacientes</span>
-    <span>Consulta</span>
+    <a routerLink="/patients" routerLinkActive="active">Pacientes</a>
+    <a routerLink="/appointments" routerLinkActive="active">Consulta</a>
   </div>
 </div>

@@ -10,7 +10,7 @@
   }
 </div>
 
-<div class="my-4 w-full flex justify-between">
+<div class="my-4 w-full flex justify-between max-md:flex-col gap-4">
   <div class="tabs tabs-box">
     @for (item of tabs; track $index) {
     <a
@@ -23,7 +23,7 @@
     }
   </div>
   <div
-    class="space-x-4 flex [&_button]:flex [&_button]:items-center [&_button]:gap-2"
+    class="space-x-4 max-md:w-full max-md:justify-end flex [&_button]:flex [&_button]:items-center [&_button]:gap-2"
   >
     <button class="btn btn-outline btn-info hover:text-white">
       <ng-icon name="lucideCirclePlus" /> Novo paciente
@@ -34,7 +34,7 @@
   </div>
 </div>
 
-<div class="w-full border border-base-300 rounded-lg px-8 pt-0 pb-4">
+<div class="w-full border border-base-300 rounded-lg px-8 pt-0 pb-4 mb-4">
   <div class="py-8">
     <h2 class="font-bold text-2xl">
       {{ tabContent[selectedTab].title }}
@@ -45,7 +45,10 @@
   </div>
   <app-table [rows]="meusDados" [head]="head" />
   <div class="w-full flex justify-end mt-4">
-    <button class="btn btn-outline btn-info hover:text-white">
+    <button
+      routerLink="{{ tabContent[selectedTab].buttonRedirect }}"
+      class="btn btn-outline btn-info hover:text-white"
+    >
       {{ tabContent[selectedTab].buttonTitle }}
     </button>
   </div>

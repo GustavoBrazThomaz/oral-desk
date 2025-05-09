@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { TableComponent } from '../../components/table/table.component';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideCirclePlus } from '@ng-icons/lucide';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TableComponent, NgIcon],
+  imports: [TableComponent, NgIcon, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   viewProviders: [provideIcons({ lucideCirclePlus })],
@@ -37,11 +38,13 @@ export class HomeComponent {
       title: 'Pacientes recentes',
       subtitle: 'Lista dos últimos pacientes cadastrados ou atendidos.',
       buttonTitle: 'Ver todos os pacientes',
+      buttonRedirect: 'patients',
     },
     {
       title: 'Próximas consultas',
       subtitle: 'Consultas agendadas para os próximos dias.',
       buttonTitle: 'Ver todas as consultas',
+      buttonRedirect: 'appointments',
     },
   ];
 
