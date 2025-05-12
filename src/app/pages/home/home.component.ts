@@ -38,13 +38,13 @@ export class HomeComponent {
       title: 'Pacientes recentes',
       subtitle: 'Lista dos últimos pacientes cadastrados ou atendidos.',
       buttonTitle: 'Ver todos os pacientes',
-      buttonRedirect: 'patients',
+      buttonRedirect: 'pacientes',
     },
     {
       title: 'Próximas consultas',
       subtitle: 'Consultas agendadas para os próximos dias.',
       buttonTitle: 'Ver todas as consultas',
-      buttonRedirect: 'appointments',
+      buttonRedirect: 'consultas',
     },
   ];
 

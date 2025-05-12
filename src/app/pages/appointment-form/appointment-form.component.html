@@ -1,0 +1,98 @@
+<div class="flex items-center gap-4">
+  <button (click)="goBack()" class="btn btn-outline border-base-300">
+    <ng-icon name="lucideArrowLeft" />
+  </button>
+  <div>
+    <h2 class="text-2xl font-bold">Nova Consulta</h2>
+    <p class="text-base-content">Agende uma nova consulta para um paciente</p>
+  </div>
+</div>
+<form class="mt-8 w-full flex gap-4">
+  <div
+    class="border border-base-300 p-4 rounded-lg w-1/2 [&_input]:w-full space-y-4"
+  >
+    <div>
+      <h2 class="text-2xl font-bold">Informações da Consulta</h2>
+      <p class="text-base-content">
+        Detalhes básicos para o agendamento da consulta.
+      </p>
+    </div>
+
+    <fieldset class="fieldset">
+      <legend class="fieldset-legend">Paciente</legend>
+      <div class="w-full flex gap-4">
+        <input
+          class="input"
+          type="text"
+          placeholder="Selecione ou busque um paciente"
+        />
+        <button class="btn btn-outline border-[#D9D9D9]">
+          <ng-icon name="lucideSearch" />
+        </button>
+      </div>
+    </fieldset>
+
+    <div class="flex gap-4">
+      <fieldset class="fieldset w-full">
+        <legend class="fieldset-legend">Data</legend>
+        <input type="date" class="input" />
+      </fieldset>
+      <fieldset class="fieldset w-full">
+        <legend class="fieldset-legend">Horário</legend>
+        <input type="time" class="input" />
+      </fieldset>
+    </div>
+
+    <fieldset class="fieldset w-full">
+      <legend class="fieldset-legend">Duração (minutos)</legend>
+      <select class="select w-full">
+        @for (item of durationTime; track $index) {
+        <option>{{ item }}</option>
+        }
+      </select>
+    </fieldset>
+  </div>
+  <div class="border border-base-300 p-4 rounded-lg w-1/2 space-y-4">
+    <div>
+      <h2 class="text-2xl font-bold">Detalhes da Consulta</h2>
+      <p class="text-base-content">
+        Informações sobre o tipo de consulta e profissional.
+      </p>
+    </div>
+
+    <fieldset class="fieldset w-full">
+      <legend class="fieldset-legend">Tipo de Consulta</legend>
+      <select class="select w-full">
+        @for (item of appointmentType; track $index) {
+        <option>{{ item }}</option>
+        }
+      </select>
+    </fieldset>
+
+    <fieldset class="fieldset w-full">
+      <legend class="fieldset-legend">Dentista</legend>
+      <select class="select w-full">
+        <option>Selecione o dentista</option>
+        <option>Dr. Julio</option>
+      </select>
+    </fieldset>
+
+    <fieldset class="fieldset w-full">
+      <legend class="fieldset-legend">Dentista</legend>
+      <textarea
+        rows="5"
+        class="textarea w-full"
+        placeholder="Informações adicionas sobre a consulta"
+      ></textarea>
+    </fieldset>
+
+    <div class="w-full flex justify-between">
+      <button class="btn btn-outline btn-info hover:text-white">
+        Cancelar
+      </button>
+      <button class="btn btn-info text-white flex items-center gap-2">
+        <ng-icon name="lucideCalendarCheck" /> Agendar consulta
+      </button>
+    </div>
+  </div>
+</form>

@@ -8,11 +8,12 @@ import {
 } from '@angular/forms';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideSearch } from '@ng-icons/lucide';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-appointments',
   standalone: true,
-  imports: [TableComponent, ReactiveFormsModule, NgIcon],
+  imports: [TableComponent, ReactiveFormsModule, NgIcon, RouterLink],
   templateUrl: './appointments.component.html',
   styleUrl: './appointments.component.css',
   viewProviders: [provideIcons({ lucideSearch })],
