@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PatientsComponent } from './pages/patients/patients.component';
 import { AppointmentsComponent } from './pages/appointments/appointments.component';
 import { AppointmentFormComponent } from './pages/appointment-form/appointment-form.component';
+import { PatientsFormComponent } from './pages/patients-form/patients-form.component';
 
 export const routes: Routes = [
   {
@@ -20,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'criar/consulta',
     component: AppointmentFormComponent,
+  },
+  {
+    path: 'criar/paciente',
+    component: PatientsFormComponent,
   },
 ];

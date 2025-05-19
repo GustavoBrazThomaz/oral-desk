@@ -1,0 +1,236 @@
+<div class="flex items-center gap-4">
+  <button (click)="goBack()" class="btn btn-outline border-base-300">
+    <ng-icon name="lucideArrowLeft" />
+  </button>
+  <div>
+    <h2 class="text-2xl font-bold">Nova Consulta</h2>
+    <p class="text-base-content">Agende uma nova consulta para um paciente</p>
+  </div>
+</div>
+
+<form class="my-8 w-full flex flex-col gap-4">
+  <div class="w-full flex gap-4">
+    <div
+      class="border border-base-300 p-4 rounded-lg w-1/2 [&_input]:w-full space-y-2"
+    >
+      <div>
+        <h2 class="text-2xl font-bold">Informações Pessoais</h2>
+        <p class="text-base-content">
+          Dados básicos do paciente para identificação e contato.
+        </p>
+      </div>
+
+      <field-input
+        type="text"
+        label="Nome Completo*"
+        placeholder="Nome completo do paciente"
+        [required]="true"
+      />
+
+      <div class="flex gap-4">
+        <field-input
+          type="email"
+          label="Email"
+          placeholder="email@exemplo.com"
+          class="w-full"
+        />
+
+        <field-input
+          type="text"
+          label="Telefone*"
+          placeholder="(00) 00000-0000"
+          class="w-full"
+        />
+      </div>
+
+      <div class="flex gap-4">
+        <field-input
+          type="date"
+          label="Data de nascimento*"
+          [required]="true"
+          class="w-full"
+        />
+
+        <fieldset class="fieldset w-full">
+          <legend class="fieldset-legend">Gênero</legend>
+          <select class="select w-full">
+            <option>Masculino</option>
+            <option>Feminino</option>
+          </select>
+        </fieldset>
+      </div>
+
+      <div class="flex gap-4">
+        <field-input
+          type="text"
+          label="CPF"
+          class="w-full"
+          placeholder="000.000.000-00"
+        />
+
+        <field-input
+          type="text"
+          label="RG"
+          class="w-full"
+          placeholder="000.000.000-00"
+        />
+      </div>
+    </div>
+
+    <div
+      class="border border-base-300 p-4 rounded-lg w-1/2 space-y-2 [&_input]:w-full"
+    >
+      <div>
+        <h2 class="text-2xl font-bold">Endereço</h2>
+        <p class="text-base-content">Informações de endereço do paciente.</p>
+      </div>
+
+      <field-input
+        type="text"
+        label="Logradouro"
+        placeholder="Rua, Avenida, etc"
+      />
+
+      <div class="flex gap-4">
+        <field-input
+          type="text"
+          label="Número"
+          class="w-full"
+          placeholder="123"
+        />
+        <field-input
+          type="text"
+          label="Complemento"
+          placeholder="Apto, Bloco, etc"
+          class="w-full"
+        />
+      </div>
+
+      <field-input type="text" label="Bairro" placeholder="Nome do bairro" />
+
+      <div class="flex gap-4">
+        <field-input
+          type="text"
+          label="Cidade"
+          class="w-full"
+          placeholder="Nome da cidade"
+        />
+        <field-input
+          type="text"
+          label="Estado"
+          class="w-full"
+          placeholder="Selecione"
+        />
+      </div>
+
+      <field-input type="text" label="CEP" placeholder="00000-000" />
+    </div>
+  </div>
+  <div class="w-full flex gap-4">
+    <div
+      class="border border-base-300 p-4 rounded-lg w-1/2 space-y-2 [&_input]:w-full"
+    >
+      <div>
+        <h2 class="text-2xl font-bold">Informações Médicas</h2>
+        <p class="text-base-content">
+          Dados sobre convênio e histórico médico do paciente.
+        </p>
+      </div>
+
+      <div class="flex gap-4">
+        <field-input
+          type="text"
+          label="Convênio"
+          class="w-full"
+          placeholder="Nome do convênio"
+        />
+
+        <field-input
+          type="text"
+          label="Número da carteirinha"
+          class="w-full"
+          placeholder="Número do convênio"
+        />
+      </div>
+
+      <field-input type="date" label="Validade do convênio" class="w-full" />
+
+      <field-input
+        [isTextarea]="true"
+        label="Alergias"
+        placeholder="Liste todas as alergias conhecidas"
+        class="w-full"
+      />
+      <field-input
+        [isTextarea]="true"
+        label="Medicamentos em uso"
+        placeholder="Liste os medicamentos que o paciente utiliza regularmente"
+        class="w-full"
+      />
+      <field-input
+        [isTextarea]="true"
+        label="Histórico Médico"
+        placeholder="Informações relevantes sobre o histórico médico"
+        class="w-full"
+      />
+    </div>
+
+    <div class="border border-base-300 p-4 rounded-lg w-1/2 space-y-2">
+      <div>
+        <h2 class="text-2xl font-bold">Informações Adicionais</h2>
+        <p class="text-base-content">
+          Dados complementares e contato de emergência.
+        </p>
+      </div>
+
+      <div class="flex gap-4">
+        <field-input
+          type="text"
+          label="Contato de Emergência"
+          class="w-full"
+          placeholder="Nome do contato"
+        />
+
+        <field-input
+          type="text"
+          label="(00) 00000-0000"
+          class="w-full"
+          placeholder="Telefone de Emergência"
+        />
+      </div>
+
+      <field-input
+        type="text"
+        label="Observações"
+        class="w-full"
+        placeholder="Observações importante para o paciente"
+        [isTextarea]="true"
+      />
+
+      <div
+        class="flex items-start p-4 border border-[#D9D9D9] rounded-lg gap-2 mt-4"
+      >
+        <input
+          type="checkbox"
+          defaultChecked
+          className="checkbox checkbox-neutral size-6"
+        />
+
+        <div class="flex flex-col -mt-1">
+          <span class="text-sm">Termos e Condições</span>
+          <span class="text-sm text-gray-500">
+            O paciente concorda com os termos de uso e política de privacidade
+            do consultório.</span
+          >
+        </div>
+      </div>
+
+      <div class="w-full flex justify-between mt-8">
+        <button class="btn btn-info btn-outline hover:text-white">
+          Cancelar
+        </button>
+        <button class="btn btn-info text-white">Salvar paciente</button>
+      </div>
+    </div>
+  </div>
+</form>

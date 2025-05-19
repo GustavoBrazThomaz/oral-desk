@@ -4,17 +4,23 @@
     <p class="text-base-content">Gerencie todos os pacientes do consultório</p>
   </div>
 
-  <button class="btn btn-info text-white">Novo paciente</button>
+  <button routerLink="/criar/paciente" class="btn btn-info text-white">
+    Novo paciente
+  </button>
 </div>
 <div
   class="w-full border border-base-300 rounded-lg p-4 mt-4 flex justify-between"
 >
-<form [formGroup]="form" (ngSubmit)="handleSearch()" class="flex gap-2">
-  <input formControlName="search" class="input" placeholder="Buscar paciente" />
-  <button type="submit" class="btn btn-square btn-ghost">
-    <ng-icon name="lucideSearch" />
-  </button>
-</form>
+  <form [formGroup]="form" (ngSubmit)="handleSearch()" class="flex gap-2">
+    <input
+      formControlName="search"
+      class="input"
+      placeholder="Buscar paciente"
+    />
+    <button type="submit" class="btn btn-square btn-ghost">
+      <ng-icon name="lucideSearch" />
+    </button>
+  </form>
   <form class="filter">
     <input class="btn btn-square" type="reset" value="×" />
     <input class="btn" type="radio" name="frameworks" aria-label="Todos" />

@@ -1,0 +1,22 @@
+<fieldset class="fieldset w-full">
+  <legend class="fieldset-legend">{{ label }}</legend>
+  @if (!isTextarea) {
+  <input
+    type="{{ type }}"
+    class="input {{ class }}"
+    placeholder="{{ placeholder }}"
+    (input)="onInputChange($event)"
+    required="{{ required }}"
+  />
+
+  } @else {
+
+  <textarea
+    class="textarea {{ class }}"
+    placeholder="{{ placeholder }}"
+    required="{{ required }}"
+    (input)="onInputChange($event)"
+    rows="{{ rows }}"
+  ></textarea>
+  }
+</fieldset>

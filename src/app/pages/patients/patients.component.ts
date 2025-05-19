@@ -3,11 +3,12 @@ import { TableComponent } from '../../components/table/table.component';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideSearch } from '@ng-icons/lucide';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-patients',
   standalone: true,
-  imports: [TableComponent, ReactiveFormsModule, NgIcon],
+  imports: [TableComponent, ReactiveFormsModule, NgIcon, RouterLink],
   templateUrl: './patients.component.html',
   styleUrl: './patients.component.css',
   viewProviders: [provideIcons({ lucideSearch })],
